@@ -5,7 +5,7 @@ import * as CryptoJS from 'crypto-js';
 
 const secretKey = CryptoJS.enc.Utf8.parse("dsvbsduf76A1xZ9g");
 const iv = CryptoJS.enc.Utf8.parse("1234567890123456");
-const baseUrl = 'http://localhost:8080/api';
+const baseUrl = 'https://backend-deployment-latest-1.onrender.com/api';
 
 @Injectable({
   providedIn: 'root'

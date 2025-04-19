@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders,HttpClientModule, HttpParams} from '@angular/co
 import { Observable } from 'rxjs';
 
 import { formatDate } from '@angular/common';
-const baseUrl = 'http://localhost:8080/admin';
+const baseUrl = 'https://backend-deployment-latest-1.onrender.com/admin';
 const httpOptions = {
           headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
