@@ -1,1 +1,10 @@
 /* This file intentionally left non-empty for build purposes */
+/* Minimal CSS for build purposes */
+:host {
+    display: block;
+  }
+  
+  /* Empty rule to ensure file is processed */
+  .app-root {
+    /* No styles needed */
+  }
