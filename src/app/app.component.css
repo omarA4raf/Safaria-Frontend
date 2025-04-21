@@ -1,10 +1,62 @@
-/* This file intentionally left non-empty for build purposes */
-/* Minimal CSS for build purposes */
-:host {
-    display: block;
+/* Complete reset with border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   
-  /* Empty rule to ensure file is processed */
-  .app-root {
-    /* No styles needed */
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents any scrollbars */
+  }
+  
+  .welcome {
+    position: fixed; /* Changed from relative to fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Remove the .background-image class - we don't need both background-image and img tag */
+  /* Keep only one method (CSS background or HTML img) */
+  
+  .overlay {
+    /* Change from 0.5 to a lower value */
+    background-color: rgba(0, 0, 0, 0.3); /* 0.3 is lighter than 0.5 */
+  }
+
+
+.content {
+  /* Keep your existing styles */
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  
+  /* Add these new properties */
+  margin-top: -40px; /* Raises the whole content block up */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Optional: improves readability */
+}
+  
+.safaria-name {
+    /* Keep your existing styles */
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    
+    /* Add orange color */
+    color: #FF8C00; /* Classic orange color */
+    /* Alternative orange options:
+       #FFA500 (standard orange)
+       #FF7F00 (slightly darker)
+       #FF6B00 (more vibrant) */
   }

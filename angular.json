@@ -3,9 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Front-End": {
+    "safaria-frontend": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +40,7 @@
         "build": {
           "builder": "@ngx-env/builder:application",
           "options": {
-            "outputPath": "dist/safaria-front",
+            "outputPath": "dist/safaria-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -21,23 +48,16 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/_redirects",
-              "src/assets",
+              "src/_redirect",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/leaflet/dist/leaflet.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
-            ],
+            "scripts": [],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -78,10 +98,10 @@
           "builder": "@ngx-env/builder:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Front-End:build:production"
+              "buildTarget": "safaria-frontend:build:production"
             },
             "development": {
-              "buildTarget": "Front-End:build:development"
+              "buildTarget": "safaria-frontend:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -90,42 +110,8 @@
         "extract-i18n": {
           "builder": "@ngx-env/builder:extract-i18n",
           "options": {}
-        },
-        "test": {
-          "builder": "@ngx-env/builder:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css",
-              "node_modules/leaflet/dist/leaflet.css"
-            ],
-            "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
-            ],
-            "builderMode": "browser"
-          }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "470dee1e-b9d0-4447-8a6a-68ead79e351e"
   }
 }
