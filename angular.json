@@ -40,7 +40,7 @@
         "build": {
           "builder": "@ngx-env/builder:application",
           "options": {
-            "outputPath": "dist/safaria-frontend/browser",
+            "outputPath": "dist/safaria-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
